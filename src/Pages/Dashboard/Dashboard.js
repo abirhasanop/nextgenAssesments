@@ -65,9 +65,9 @@ const Dashboard = () => {
 
                 <div className=''>
                     <h4 className='font-bold my-10'>Expense Report</h4>
-                    <div className='w-[599px] h-[344px] bg-white rounded-2xl p-9'>
+                    <div className='w-[400px] lg:w-[599px] h-[344px] bg-white rounded-2xl p-9'>
                         <div className='flex justify-between'>
-                            <div className='flex gap-5 text-[#A5A5A5] font-semibold'>
+                            <div className='flex gap-3 text-[#A5A5A5] font-semibold'>
                                 <a href="#_">Day</a>
                                 <a href="#_">Week</a>
                                 <a href="#_">Month</a>
