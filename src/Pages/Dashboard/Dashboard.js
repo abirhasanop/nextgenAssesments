@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoIosPeople } from "react-icons/io"
+import Tasksummery from '../../Components/TaskSummery/Tasksummery';
 
 const Dashboard = () => {
     return (
@@ -57,6 +58,11 @@ const Dashboard = () => {
                     })
                 }
             </section>
+
+
+
+            {/* buttom sections */}
+            <Tasksummery />
         </div>
     );
 };
