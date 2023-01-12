@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoIosPeople } from "react-icons/io"
+import ExpenceReport from '../../Components/ExpenceReport/ExpenceReport';
 import Tasksummery from '../../Components/TaskSummery/Tasksummery';
 
 const Dashboard = () => {
@@ -58,11 +59,34 @@ const Dashboard = () => {
                     })
                 }
             </section>
+            <div className='flex gap-5 flex-col md:flex-row'>
+                {/* Expence Report Section */}
+
+
+                <div className=''>
+                    <h4 className='font-bold my-10'>Expense Report</h4>
+                    <div className='w-[599px] h-[344px] bg-white rounded-2xl p-9'>
+                        <div className='flex justify-between'>
+                            <div className='flex gap-5 text-[#A5A5A5] font-semibold'>
+                                <a href="#_">Day</a>
+                                <a href="#_">Week</a>
+                                <a href="#_">Month</a>
+                                <a href="#_">Year</a>
+                            </div>
+                            <button className='btn btn-sm'>Export Details</button>
+                        </div>
+                        <h1 className='text-3xl font-extrabold my-3'>৳45,000</h1>
+
+                        <ExpenceReport />
+                    </div>
+                </div>
 
 
 
-            {/* buttom sections */}
-            <Tasksummery />
+
+                {/* Task summary sections */}
+                <Tasksummery />
+            </div>
         </div>
     );
 };
