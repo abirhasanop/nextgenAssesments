@@ -7,6 +7,7 @@ import { FaMoneyCheckAlt } from "react-icons/fa"
 import { IoNotifications } from "react-icons/io5"
 import { FcDepartment } from "react-icons/fc"
 import { FiLogOut } from "react-icons/fi"
+import { IoMdSettings } from "react-icons/io"
 
 const Slidebar = () => {
     return (
@@ -35,32 +36,38 @@ const Slidebar = () => {
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
                                 <IoIosPeople className='text-xl' />
-                                <span className="flex-1 ml-3 whitespace-nowrap">Inbox</span>
+                                <span className="flex-1 ml-3 whitespace-nowrap">Employees</span>
                                 <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">3</span>
                             </a>
                         </li>
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
                                 <BiLogOutCircle className='text-xl' />
-                                <span className="flex-1 ml-3 whitespace-nowrap">Users</span>
+                                <span className="flex-1 ml-3 whitespace-nowrap">Leaves</span>
                             </a>
                         </li>
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
                                 <FaMoneyCheckAlt className='text-xl' />
-                                <span className="flex-1 ml-3 whitespace-nowrap">Products</span>
+                                <span className="flex-1 ml-3 whitespace-nowrap">Expense</span>
                             </a>
                         </li>
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
                                 <IoNotifications className='text-xl' />
-                                <span className="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                                <span className="flex-1 ml-3 whitespace-nowrap">Notice</span>
                             </a>
                         </li>
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
                                 <FcDepartment className='text-xl' />
-                                <span className="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                                <span className="flex-1 ml-3 whitespace-nowrap">Departments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
+                                <IoMdSettings className='text-xl' />
+                                <span className="flex-1 ml-3 whitespace-nowrap">Settings</span>
                             </a>
                         </li>
                         <li>
