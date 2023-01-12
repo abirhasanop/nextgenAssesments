@@ -1,12 +1,13 @@
 import React from 'react';
 import { IoMdSettings } from "react-icons/io"
 import Table from '../../Components/Table/Table';
+import { FaAngleDown } from "react-icons/fa"
 
 const Attendence = () => {
     return (
         <div className='p-10'>
             {/* header */}
-            <div className='flex justify-between'>
+            <div className='flex justify-between items-center mb-10'>
                 <h1 className='text-3xl font-bold mb-10'>Dashboard</h1>
                 <div className='flex gap-10 items-center'>
                     <button className='btn btn-lg bg-[#1E2772]'>Download Report</button>
@@ -21,23 +22,55 @@ const Attendence = () => {
                 <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
                     <p className='text-base text-gray-500'>Department</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                    <div className="dropdown w-full h-full">
+                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                            Attendance <FaAngleDown className='text-xl' />
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                    <div className="dropdown w-full h-full">
+                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                            Present <FaAngleDown className='text-xl' />
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
+                    <p className='text-base text-gray-500'>Check In</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
+                    <p className='text-base text-gray-500'>Location</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                    <div className="dropdown w-full h-full">
+                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                            Designation <FaAngleDown className='text-xl' />
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center'>
-                    <input type="date" />
+                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                    <div className="dropdown w-full h-full">
+                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                            Designation <FaAngleDown className='text-xl' />
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
