@@ -24,7 +24,7 @@ const Navbar = () => {
                     <Link>
                         <div className='flex gap-2 items-center btn btn-ghost'>
                             <img className='w-10 h-10' src={Logo} alt="" />
-                            <p to="/" className="normal-case text-xl text-[#1E2772] font-bold">SOFTGEN IT</p>
+                            <p to="/" className="normal-case text-xl text-[#1E2772] font-bold">NEXTGEN IT</p>
                         </div>
                     </Link>
                 </div>

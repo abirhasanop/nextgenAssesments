@@ -22,7 +22,7 @@ const Slidebar = () => {
                 <div className="pl-14 px-3 py-4 overflow-y-auto rounded bg-[#1E2772] h-full text-white dark:bg-gray-800">
                     <Link to="/" className="flex items-center pl-2.5 mb-5">
                         <img src={Logo} className="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SOFTGEN IT</span>
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">NEXTGEN IT</span>
                     </Link>
                     <ul className="space-y-2">
                         <li>
