@@ -13,7 +13,7 @@ const Tasksummery = () => {
                         <div>
                             <label>Completed</label>
                             <div className="flex justify-between items-center h-7 overflow-hidden bg-[#F4F4F4] rounded-lg">
-                                <div className="bg-[#C6C7F8] h-7 w-1/2"></div>
+                                <div className="bg-[#C6C7F8] h-7 w-[10%]"></div>
                                 <div className='mr-2'>
                                     <span className='font-semibold text-lg text-[#BABABA]'>50</span>
                                     <span className='font-semibold text-lg text-[#BABABA]'>/</span>
@@ -35,7 +35,7 @@ const Tasksummery = () => {
                         <div>
                             <label>Pending</label>
                             <div className="flex justify-between h-7 overflow-hidden bg-[#F4F4F4] rounded-lg">
-                                <div className="bg-[#C6C7F8] h-7 w-1/2"></div>
+                                <div className="bg-[#C6C7F8] h-7 w-[25%]"></div>
                                 <div className='mr-2'>
                                     <span className='font-semibold text-lg'>50</span>
                                     <span className='font-semibold text-lg text-[#BABABA]'>/</span>

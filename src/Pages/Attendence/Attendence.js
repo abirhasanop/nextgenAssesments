@@ -2,15 +2,33 @@ import React from 'react';
 import { IoMdSettings } from "react-icons/io"
 import Table from '../../Components/Table/Table';
 import { FaAngleDown } from "react-icons/fa"
+import ReactToPdf from 'react-to-pdf'
 
 const Attendence = () => {
+
+    const ref = React.createRef();
+
+    const options = {
+        // orientation: 'landscape',
+        // unit: 'in',
+        format: "a3"
+    };
+
+
     return (
         <div className='p-10'>
             {/* header */}
             <div className='flex justify-between items-center mb-10'>
                 <h1 className='text-3xl font-bold mb-10'>Dashboard</h1>
                 <div className='flex gap-10 items-center'>
-                    <button className='btn btn-lg bg-[#1E2772]'>Download Report</button>
+                    <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={0} y={20} scale={0.8}>
+                        {({ toPdf }) => (
+                            <button onClick={toPdf} className='btn bg-[#1E2772]'>Download Report</button>
+                        )}
+
+                    </ReactToPdf>
+                    {/* <button className='btn bg-[#1E2772]'>Download Report</button> */}
+
                     <button className='btn btn-ghost'><IoMdSettings className='text-5xl text-[#1E2772]' /></button>
                 </div>
             </div>
@@ -75,9 +93,9 @@ const Attendence = () => {
             </section>
 
             {/* table */}
-            <div>
+            <section ref={ref}>
                 <Table />
-            </div>
+            </section>
         </div>
     );
 };

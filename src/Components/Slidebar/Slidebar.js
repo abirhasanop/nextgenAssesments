@@ -8,8 +8,12 @@ import { IoNotifications } from "react-icons/io5"
 import { FcDepartment } from "react-icons/fc"
 import { FiLogOut } from "react-icons/fi"
 import { IoMdSettings } from "react-icons/io"
+import { FaAngleDown } from "react-icons/fa"
+import { FaAngleRight } from "react-icons/fa"
+import { useState } from 'react';
 
 const Slidebar = () => {
+    const [settingIsOpen, setSettingIsOpen] = useState(false)
     return (
         <div>
 
@@ -64,11 +68,34 @@ const Slidebar = () => {
                                 <span className="flex-1 ml-3 whitespace-nowrap">Departments</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">
+                        <li className=''>
+
+                            <p onClick={() => setSettingIsOpen(!settingIsOpen)} href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700 cursor-pointer ">
                                 <IoMdSettings className='text-xl' />
                                 <span className="flex-1 ml-3 whitespace-nowrap">Settings</span>
-                            </a>
+                                {
+                                    settingIsOpen ? <><FaAngleDown className='mr-4' /></> : <><FaAngleRight className='mr-4' /></>
+                                }
+                            </p>
+
+
+
+                            <div className={`flex justify-end w-[60%] ${settingIsOpen ? "flex" : "hidden"}`}>
+                                <ul className='list-disc cursor-pointer'>
+                                    <li>
+                                        <p className='hover:bg-gray-900 rounded-lg pl-2 p-1 flex items-center'>Approval</p>
+                                    </li>
+                                    <li>
+                                        <p className='hover:bg-gray-900 rounded-lg pl-2 p-1 flex items-center'>Leave</p>
+                                    </li>
+                                    <li>
+                                        <p className='hover:bg-gray-900 rounded-lg pl-2 p-1 flex items-center'>Office Setting</p>
+                                    </li>
+                                    <li>
+                                        <p className='hover:bg-gray-900 rounded-lg pl-2 p-1 flex items-center'>My Subscriptions</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li>
                             <a href="#_" className="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-gray-900 dark:hover:bg-gray-700">

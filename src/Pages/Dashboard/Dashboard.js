@@ -2,8 +2,18 @@ import React from 'react';
 import { IoIosPeople } from "react-icons/io"
 import ExpenceReport from '../../Components/ExpenceReport/ExpenceReport';
 import Tasksummery from '../../Components/TaskSummery/Tasksummery';
-
+import ReactToPdf from 'react-to-pdf'
 const Dashboard = () => {
+
+    const ref = React.createRef();
+
+    const options = {
+        // orientation: 'landscape',
+        // unit: 'in',
+        format: "a4"
+    };
+
+
     return (
         <div className='p-10'>
             <h1 className='text-3xl font-bold mb-10'>Dashboard</h1>
@@ -21,7 +31,7 @@ const Dashboard = () => {
 
                                     <div className='flex items-center justify-between'>
                                         <h1 className='text-3xl font-extrabold'>450</h1>
-                                        <button className='btn btn-sm bg-[#1E2772]'>View All</button>
+                                        <button className='btn btn-sm bg-[#1E2772] hover:bg-[#25319e] hover:shadow-xl'>View All</button>
                                     </div>
                                     <hr className='mt-8 mb-6' />
 
@@ -63,7 +73,7 @@ const Dashboard = () => {
                 {/* Expence Report Section */}
 
 
-                <div className=''>
+                <div ref={ref} className=''>
                     <h4 className='font-bold my-10'>Expense Report</h4>
                     <div className='w-[400px] lg:w-[599px] h-[344px] bg-white rounded-2xl p-9'>
                         <div className='flex justify-between'>
@@ -73,9 +83,15 @@ const Dashboard = () => {
                                 <a href="#_">Month</a>
                                 <a href="#_">Year</a>
                             </div>
-                            <button className='btn btn-sm'>Export Details</button>
+                            <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={45} y={20} scale={0.8}>
+                                {({ toPdf }) => (
+                                    <button onClick={toPdf} className='btn bg-[#1E2772] hover:shadow-lg hover:bg-[#25319e] btn-sm'>Export Details</button>
+                                )}
+
+                            </ReactToPdf>
+
                         </div>
-                        <h1 className='text-3xl font-extrabold my-3'>৳45,000</h1>
+                        <h1 className='text-3xl font-extrabold mt-2 mb-3'>৳45,000</h1>
 
                         <ExpenceReport />
                     </div>
