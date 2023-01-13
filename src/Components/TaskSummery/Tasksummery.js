@@ -1,11 +1,15 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Context } from '../../Contexts/Contexts';
 
 const Tasksummery = () => {
+    const { dark } = useContext(Context)
+
     return (
         <div>
             <h4 className='font-bold my-10'>Task Summary</h4>
 
-            <div className="flex flex-col w-[273px] h-[344px] p-5 shadow-sm rounded-xl border-2 border-dashed border-purple-400 bg-white">
+            <div className={`${dark ? "bg-[#070c16]" : "bg-white"} flex flex-col w-[273px] h-[344px] p-5 shadow-sm rounded-xl border-2 border-dashed border-purple-400 `}>
                 <div className="flex flex-col w-full">
                     <p className="font-semibold">Total Task</p>
                     <p className="text-lg font-bold mb-3">112</p>

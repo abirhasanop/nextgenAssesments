@@ -4,9 +4,11 @@ import Table from '../../Components/Table/Table';
 import { FaAngleDown } from "react-icons/fa"
 import ReactToPdf from 'react-to-pdf'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../Contexts/Contexts';
 
 const Attendence = () => {
-
+    const { dark } = useContext(Context)
     const ref = React.createRef();
 
     const options = {
@@ -34,15 +36,15 @@ const Attendence = () => {
             </div>
             {/* filters */}
             <section className='flex flex-wrap gap-5 mb-10 justify-center md:justify-start'>
-                <label htmlFor='date' className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
-                    <input id='date' type="date" className='hover:bg-gray-100 text-gray-500' />
+                <label htmlFor='date' className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center `}>
+                    <input id='date' type="date" className=' text-gray-500' />
                 </label>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center `}>
                     <p className='text-base text-gray-500'>Department</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem]`}>
                     <div className="dropdown w-full h-full">
-                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                        <label tabIndex={0} className={`btn ${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} text-gray-500 border-none  w-full h-full flex gap-3`}>
                             Attendance <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -51,9 +53,9 @@ const Attendence = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem]`}>
                     <div className="dropdown w-full h-full">
-                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                        <label tabIndex={0} className={`btn ${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} text-gray-500 border-none  w-full h-full flex gap-3`}>
                             Present <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -62,15 +64,15 @@ const Attendence = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center `}>
                     <p className='text-base text-gray-500'>Check In</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center hover:bg-gray-100'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem] flex justify-center items-center `}>
                     <p className='text-base text-gray-500'>Location</p>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem]`}>
                     <div className="dropdown w-full h-full">
-                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                        <label tabIndex={0} className={`btn ${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} text-gray-500 border-none  w-full h-full flex gap-3`}>
                             Designation <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -79,9 +81,9 @@ const Attendence = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
+                <div className={`${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} border border-[#00000033] rounded-lg w-64 h-[4.5rem]`}>
                     <div className="dropdown w-full h-full">
-                        <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
+                        <label tabIndex={0} className={`btn ${dark ? "bg-[#070c16]" : "bg-white hover:bg-gray-100"} text-gray-500 border-none  w-full h-full flex gap-3`}>
                             Department <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">

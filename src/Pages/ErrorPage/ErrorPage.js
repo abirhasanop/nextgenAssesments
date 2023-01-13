@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ErrorPage = () => {
     return (
         <div>
-            <section className='flex items-center p-16 bg-gray-100 text-gray-900'>
+            <section className='flex items-center p-16 text-gray-900'>
                 <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
                     {/* <HandThumbDownIcon className='w-40 h-40 text-green-400' /> */}
                     <div className='max-w-md text-center'>
@@ -16,7 +16,7 @@ const ErrorPage = () => {
                                 4
                             </div>
                         </h2>
-                        <p className='text-2xl font-semibold md:text-3xl mb-8'>
+                        <p className='text-2xl font-semibold md:text-3xl mb-8 text-gray-500'>
                             Sorry, we couldn't find this page.
                         </p>
                         <Link to='/'>

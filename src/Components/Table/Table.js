@@ -1,12 +1,15 @@
 import React from 'react';
+import { useContext } from 'react';
 import { FaEye } from "react-icons/fa"
 import { HiDocumentText } from "react-icons/hi"
+import { Context } from '../../Contexts/Contexts';
 import Pagination from '../Pagination/Pagination';
 
 const Table = () => {
     // const [isOpen, setIsOpen] = useState(true)
+    const { dark } = useContext(Context)
     return (
-        <div className='bg-white p-8'>
+        <div className={`${dark ? "bg-[#0F1729] shadow-2xl" : "bg-white"} p-8`}>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead style={{ "background": "white" }}>
