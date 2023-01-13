@@ -4,8 +4,10 @@ import ExpenceReport from '../../Components/ExpenceReport/ExpenceReport';
 import Tasksummery from '../../Components/TaskSummery/Tasksummery';
 import ReactToPdf from 'react-to-pdf'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
 const Dashboard = () => {
-
+    const [status, SetStatus] = useState([])
     const ref = React.createRef();
 
     const options = {
@@ -14,6 +16,12 @@ const Dashboard = () => {
         format: "a4"
     };
 
+    useEffect(() => {
+        fetch(`statusData.json`)
+            .then(res => res.json())
+            .then(data => SetStatus(data))
+    }, [])
+
 
     return (
         <div className='p-10'>
@@ -21,17 +29,18 @@ const Dashboard = () => {
             <p className='font-bold mb-3 text-center md:text-start'>Company Status</p>
             <section className='flex gap-5 flex-wrap justify-center md:justify-start'>
                 {
-                    [...Array(4)].map((j, i) => {
+                    status?.map((stat, i) => {
+                        const { name, number } = stat
                         return (
                             <section key={i}>
                                 <div className='bg-white w-72 h-56 rounded-lg p-6'>
                                     <div className='flex items-center gap-2 mb-4'>
                                         <IoIosPeople />
-                                        <p className='text-[#A5A5A5] font-medium'>Total Employee</p>
+                                        <p className='text-[#A5A5A5] font-medium'>{name}</p>
                                     </div>
 
                                     <div className='flex items-center justify-between'>
-                                        <h1 className='text-3xl font-extrabold'>450</h1>
+                                        <h1 className='text-3xl font-extrabold'>{number}</h1>
                                         <Link to="/coming-soon">
                                             <button className='btn btn-sm bg-[#1E2772] hover:bg-[#25319e] hover:shadow-xl'>View All</button>
                                         </Link>
