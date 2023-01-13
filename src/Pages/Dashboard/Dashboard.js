@@ -3,6 +3,7 @@ import { IoIosPeople } from "react-icons/io"
 import ExpenceReport from '../../Components/ExpenceReport/ExpenceReport';
 import Tasksummery from '../../Components/TaskSummery/Tasksummery';
 import ReactToPdf from 'react-to-pdf'
+import { Link } from 'react-router-dom';
 const Dashboard = () => {
 
     const ref = React.createRef();
@@ -16,8 +17,8 @@ const Dashboard = () => {
 
     return (
         <div className='p-10'>
-            <h1 className='text-3xl font-bold mb-10'>Dashboard</h1>
-            <p className='font-bold mb-3'>Company Status</p>
+            <h1 className='text-3xl font-bold mb-10 text-center md:text-start'>Dashboard</h1>
+            <p className='font-bold mb-3 text-center md:text-start'>Company Status</p>
             <section className='flex gap-5 flex-wrap justify-center md:justify-start'>
                 {
                     [...Array(4)].map((j, i) => {
@@ -31,7 +32,9 @@ const Dashboard = () => {
 
                                     <div className='flex items-center justify-between'>
                                         <h1 className='text-3xl font-extrabold'>450</h1>
-                                        <button className='btn btn-sm bg-[#1E2772] hover:bg-[#25319e] hover:shadow-xl'>View All</button>
+                                        <Link to="/coming-soon">
+                                            <button className='btn btn-sm bg-[#1E2772] hover:bg-[#25319e] hover:shadow-xl'>View All</button>
+                                        </Link>
                                     </div>
                                     <hr className='mt-8 mb-6' />
 
@@ -69,7 +72,7 @@ const Dashboard = () => {
                     })
                 }
             </section>
-            <div className='flex gap-5 flex-col md:flex-row'>
+            <div className='flex gap-5 flex-col items-center md:justify-start justify-center md:flex-row'>
                 {/* Expence Report Section */}
 
 
@@ -83,7 +86,7 @@ const Dashboard = () => {
                                 <a href="#_">Month</a>
                                 <a href="#_">Year</a>
                             </div>
-                            <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={45} y={20} scale={0.8}>
+                            <ReactToPdf targetRef={ref} filename="expence-report.pdf" options={options} x={45} y={20} scale={0.8}>
                                 {({ toPdf }) => (
                                     <button onClick={toPdf} className='btn bg-[#1E2772] hover:shadow-lg hover:bg-[#25319e] btn-sm'>Export Details</button>
                                 )}

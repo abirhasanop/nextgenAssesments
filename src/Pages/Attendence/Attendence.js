@@ -3,6 +3,7 @@ import { IoMdSettings } from "react-icons/io"
 import Table from '../../Components/Table/Table';
 import { FaAngleDown } from "react-icons/fa"
 import ReactToPdf from 'react-to-pdf'
+import { Link } from 'react-router-dom';
 
 const Attendence = () => {
 
@@ -18,16 +19,15 @@ const Attendence = () => {
     return (
         <div className='p-10'>
             {/* header */}
-            <div className='flex justify-between items-center mb-10'>
+            <div className='flex flex-col  md:flex-row  justify-between items-center mb-10'>
                 <h1 className='text-3xl font-bold mb-10'>Dashboard</h1>
-                <div className='flex gap-10 items-center'>
-                    <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={0} y={20} scale={0.8}>
+                <div className='flex md:gap-10 items-center'>
+                    <ReactToPdf targetRef={ref} filename="report.pdf" options={options} x={0} y={20} scale={0.8}>
                         {({ toPdf }) => (
                             <button onClick={toPdf} className='btn bg-[#1E2772]'>Download Report</button>
                         )}
 
                     </ReactToPdf>
-                    {/* <button className='btn bg-[#1E2772]'>Download Report</button> */}
 
                     <button className='btn btn-ghost'><IoMdSettings className='text-5xl text-[#1E2772]' /></button>
                 </div>
@@ -46,8 +46,8 @@ const Attendence = () => {
                             Attendance <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
+                            <li><Link>Total Attendance</Link></li>
+                            <li><Link>Only Employees</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -57,8 +57,8 @@ const Attendence = () => {
                             Present <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
+                            <li><Link>Total Present</Link></li>
+                            <li><Link>Employees</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -74,19 +74,19 @@ const Attendence = () => {
                             Designation <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
+                            <li><Link>All</Link></li>
+                            <li><Link>Employees</Link></li>
                         </ul>
                     </div>
                 </div>
                 <div className='bg-white border border-[#00000033] rounded-lg w-64 h-[4.5rem]'>
                     <div className="dropdown w-full h-full">
                         <label tabIndex={0} className="btn bg-white text-gray-500 border-none hover:bg-gray-100 w-full h-full flex gap-3">
-                            Designation <FaAngleDown className='text-xl' />
+                            Department <FaAngleDown className='text-xl' />
                         </label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
+                            <li><Link>Technical</Link></li>
+                            <li><Link>Marketing</Link></li>
                         </ul>
                     </div>
                 </div>

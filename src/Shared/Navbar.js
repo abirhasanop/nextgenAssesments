@@ -1,20 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from "../Assets/taskImage.png"
 
 const Navbar = () => {
     return (
         <div className='bg-white'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <label htmlFor="my-drawer-2" className="btn bg-[#1E2772] hover:bg-[#222d94] btn-circle lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </label>
+                    {/* <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a href='_'>adsfads</a></li>
-                            <li><a href='_'>Item 3</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/attendence">Attendance</Link></li>
                         </ul>
-                    </div>
-                    <a href='_' className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    </div> */}
+                    <Link>
+                        <div className='flex gap-2 items-center btn btn-ghost'>
+                            <img className='w-10 h-10' src={Logo} alt="" />
+                            <p to="/" className="normal-case text-xl text-[#1E2772] font-bold">SOFTGEN IT</p>
+                        </div>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <form onSubmit={(e) => e.preventDefault()}>
@@ -52,22 +64,17 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <a href='_' className="justify-between">
+                                <Link className="justify-between">
                                     Profile
                                     <span className="badge">New</span>
-                                </a>
+                                </Link>
                             </li>
-                            <li><a href='_'>Settings</a></li>
-                            <li><a href='_'>Logout</a></li>
+                            <li><Link>Settings</Link></li>
+                            <li><Link>Logout</Link></li>
                         </ul>
                     </div>
 
-                    <label htmlFor="my-drawer-2" className="btn bg-[#1E2772] btn-circle lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
 
-                    </label>
                 </div>
             </div>
         </div>
