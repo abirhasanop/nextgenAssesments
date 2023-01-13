@@ -23,7 +23,7 @@ const Navbar = () => {
                     </div> */}
                     <Link>
                         <div className='flex gap-2 items-center btn btn-ghost'>
-                            <img className='w-10 h-10' src={Logo} alt="" />
+                            <img className='w-10 h-10 hidden md:block' src={Logo} alt="" />
                             <p to="/" className="normal-case text-xl text-[#1E2772] font-bold">NEXTGEN IT</p>
                         </div>
                     </Link>
